@@ -1,3 +1,8 @@
+<?php 
+	if ($_POST) {
+		echo $_POST['$nombre'];	
+	}
+ ?>
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +11,7 @@
 	<title></title>
 </head>
 <body>
-	<form action="" method="">
+	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SElf']); ?>" method="post">
 		<input type="text" placeholder="Nombre:" name="nombre" >
 		<br>
 		<label for="hombre">Hombre</label>
@@ -25,20 +30,10 @@
 		<label for="terminos">Aceptas terminos?</label>
 		<input type="checkbox" name="terminos" id="terminos" value="ok">
 		<br>
-		<?php 
-			<p /**
-			 * 
-			 */
-			class ClassName extends AnotherClass
-			{
-				
-				function __construct(argument)
-				{
-					# code...
-				}
-			}>
-		 ?>
-
+		<?php if (isset($estado)): ?>
+		<p class="error"><?php echo $estado ?></p>
+		<?php endif ?>
+		<input type="submit" value="Enviar">
 	</form>
 </body>
 </html>
